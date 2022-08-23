@@ -1,0 +1,38 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000096;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu p, .menu nav a {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.menu nav {
+  background-color: #8A8A8A1A;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.menu nav a {
+  font-size: 0.8rem;
+  margin: 0 10px;
+  transition: .3s;
+}
+
+.menu nav a:hover, .menu .green-text:hover {
+  color: #3eff54;
+}
