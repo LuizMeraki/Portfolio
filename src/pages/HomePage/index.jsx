@@ -28,7 +28,6 @@ export default function HomePage() {
   return (
     <>
       <Header />
-
       <main>
         <section className="banner">
           <div className="img-banner"></div>
@@ -125,30 +124,29 @@ export default function HomePage() {
               <div className="box-contacts">
                 <figure>
                   <img src={ emailIcon } alt="Email Icon"></img>
-                    <figcaption><a href="mailto:luizollvrsantos@gmail.com">E-mail</a></figcaption>
+                    <figcaption><a href="mailto:luizollvrsantos@gmail.com" target="_blank">E-mail</a></figcaption>
                 </figure>
                 <figure>
                   <img src={ whatsappIcon } alt="Whatsapp Icon"></img>
-                    <figcaption><a href="https://api.whatsapp.com/send?phone=5571996036876&text=Ol%C3%A1!%20Tudo%20bem%20com%20voc%C3%AA%3F%20Siga%20o%20link%20abaixo%20e%20vamos%20tratar%20do%20assunto%20que%20deseja.">Whatsapp</a></figcaption>
+                    <figcaption><a href="https://api.whatsapp.com/send?phone=5571996036876&text=Ol%C3%A1!%20Tudo%20bem%20com%20voc%C3%AA%3F%20Siga%20o%20link%20abaixo%20e%20vamos%20tratar%20do%20assunto%20que%20deseja." target="_blank">Whatsapp</a></figcaption>
                 </figure>
                 <figure>
                   <img src={ linkedinIcon } alt="LinkedIn Icon"></img>
-                    <figcaption><a href="https://www.linkedin.com/in/luiz-henrique-a77732240/">LinkedIn</a></figcaption>
+                    <figcaption><a href="https://www.linkedin.com/in/luiz-henrique-dev-frontend/" target="_blank">LinkedIn</a></figcaption>
                 </figure>
                 <figure>
                   <img src={ githubIcon } alt="GitHub Icon"></img>
-                    <figcaption><a href="https://github.com/LuizMeraki">GitHub</a></figcaption>
+                    <figcaption><a href="https://github.com/LuizMeraki" target="_blank">GitHub</a></figcaption>
                 </figure>
                 <figure>
                   <img src={ instagramIcon } alt="Instagram Icon"></img>
-                    <figcaption><a href="https://www.instagram.com/luizmeraki/">Instagram</a></figcaption>
+                    <figcaption><a href="https://www.instagram.com/luizmeraki/" target="_blank">Instagram</a></figcaption>
                 </figure>
               </div>
             </div>
           </div>
         </section>
       </main>
-
       <Footer />
     </>
   );

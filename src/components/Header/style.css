@@ -16,7 +16,7 @@ header {
   align-items: center;
 }
 
-.menu p, .menu nav a {
+.menu a {
   font-size: 1.3rem;
   font-weight: 600;
 }
