@@ -1,22 +1,41 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 // Components
 import Header from '../../components/Header/';
 import Footer from '../../components/Footer/';
+import ProjectCard from '../../components/ProjectCard/';
+
+// Images
+import fotoPerfil from '../../assets/foto-perfil.png'; 
+import capaNetflix from '../../assets/capa-netflix.png';
+import capaAlucar from '../../assets/capa-alucar.png';
+import capaAgenciaDeViagens from '../../assets/capa-agencia-de-viagens.png';
+import fotoLuiz from '../../assets/foto-luiz.jpg';
+import htmlIcon from '../../assets/icons/html.png';
+import cssIcon from '../../assets/icons/css.png';
+import javascriptIcon from '../../assets/icons/js.png';
+import reactIcon from '../../assets/icons/react.png';
+import emailIcon from '../../assets/icons/email.png';
+import whatsappIcon from '../../assets/icons/whatsapp.png';
+import linkedinIcon from '../../assets/icons/linkedin.png';
+import githubIcon from '../../assets/icons/github.png';
+import instagramIcon from '../../assets/icons/instagram.png';
 
 
 export default function HomePage() {
   return (
     <>
       <Header />
+
       <main>
         <section className="banner">
           <div className="img-banner"></div>
           <div className="max-width">
             <div className="menu-content">
               <figure>
-                <img src="assets/img/perfil-foto.png" alt="Perfil Luiz"></img>
+                <img src={ fotoPerfil } alt="Perfil Luiz"></img>
               </figure>
               <div className="phrase">
                 <p>"Hoje <span className="green-text">melhor</span> do que ontem, amanhã melhor do que hoje."</p>
@@ -28,55 +47,36 @@ export default function HomePage() {
           <div className="projects max-width">
             <h2>Projetos</h2>
             <div className="card-container">
-              <div className="card">
-                <h4>Netflix</h4>
-                <div className="card-content">
-                  <figure>
-                    <img src="assets/img/capa-netflix.png" alt="Capa Netflix"></img>
-                  </figure>
-                  <p>Projeto inspirado na netflix que entrega um layout bem próximo ao site original. Este projeto não possui funcionalidades de back-end e nem a links, este projeto foi desenvolvido com o intuito de pôr em prática os conhecimentos em HTML e CSS. Com exceção da seção FAQ, este site está semelhante ao oficial.</p>
-                </div>
-                <div className="card-links">
-                  <a href="https://luizmeraki.github.io/Netflix/netflix/" target="_blank">Site do projeto</a>
-                  <a href="https://github.com/LuizMeraki/Netflix" target="_blank">Github</a>
-                </div>
-              </div>
-              <div className="card">
-                <h4>Aluguel de Carros</h4>
-                <div className="card-content">
-                  <figure>
-                    <img src="assets/img/capa-alucar.png" alt="Capa AluCar"></img>
-                  </figure>
-                  <p>Este é um site de aluguel de carros, aqui você poderá escolher e alugar o carro que estiver disponível, basta preencher o formulário com suas informações, escolher o modelo na lista de modelos e ainda irá descobrir mais sobre a "empresa" AluCar.</p>
-                </div>
-                <div className="card-links">
-                  <a href="https://luizmeraki.github.io/alucar-aluguel-de-carros/aluguel-de-carros/" target="_blank">Site do projeto</a>
-                  <a href="https://github.com/LuizMeraki/alucar-aluguel-de-carros" target="_blank">Github</a>
-                </div>
-              </div>
-              <div className="card">
-                <h4>Agência de Viagens</h4>
-                <div className="card-content">
-                  <figure>
-                    <img src="assets/img/capa-agencia-de-viagens.png" alt="Capa Agência de Viagens"></img>
-                  </figure>
-                  <p>Este bonito e intuitivo site de uma agência de viagens, traz o que você precisa para você se preparar para sua viagem. Aqui você informa seus dados, data de partida, de volta e ainda descobre mais sobre outros lugares que você pode conhecer na seção de ofertas e anúncios.</p>
-                </div>
-                <div className="card-links">
-                  <a href="https://luizmeraki.github.io/agencia-de-viagens/agencia-de-viagens/" target="_blank">Site do projeto</a>
-                  <a href="https://github.com/LuizMeraki/agencia-de-viagens" target="_blank">Github</a>
-                </div>
-              </div>
+              <ProjectCard 
+                card_title={ "Netflix" }
+                card_image={ capaNetflix }
+                card_description={ "Projeto inspirado na netflix que entrega um layout bem próximo ao site original. Este projeto não possui funcionalidades de back-end e nem a links, este projeto foi desenvolvido com o intuito de pôr em prática os conhecimentos em HTML e CSS. Com exceção da seção FAQ, este site está semelhante ao oficial." }
+                card_website={ "https://luizmeraki.github.io/Netflix/netflix/" }
+                card_github={ "https://github.com/LuizMeraki/Netflix" } />
+
+              <ProjectCard 
+                card_title={ "Agência de Viagens" }
+                card_image={ capaAgenciaDeViagens }
+                card_description={ "Este bonito e intuitivo site de uma agência de viagens, traz o que você precisa para você se preparar para sua viagem. Aqui você informa seus dados, data de partida, de volta e ainda descobre mais sobre outros lugares que você pode conhecer na seção de ofertas e anúncios." }
+                card_website={ "https://luizmeraki.github.io/agencia-de-viagens/agencia-de-viagens/" }
+                card_github={ "https://github.com/LuizMeraki/agencia-de-viagens" } />
+
+              <ProjectCard 
+                card_title={ "Aluguel de carros" }
+                card_image={ capaAlucar }
+                card_description={ 'Este é um site de aluguel de carros, aqui você poderá escolher e alugar o carro que estiver disponível, basta preencher o formulário com suas informações, escolher o modelo na lista de modelos e ainda irá descobrir mais sobre a "empresa" AluCar.' }
+                card_website={ "https://luizmeraki.github.io/alucar-aluguel-de-carros/aluguel-de-carros/" }
+                card_github={ "https://github.com/LuizMeraki/alucar-aluguel-de-carros" } />
             </div>
             <div className="projects-link">
-              <a href="#">Ver mais projetos</a>
+              <Link className="component-link" to='/projects'>Ver mais projetos</Link>
             </div>
           </div>
         </section>
         <section id="about">
           <div className="about max-width">
             <figure>
-              <img src="assets/img/foto-luiz.jpg" alt="Foto de Luiz"></img>
+              <img src={ fotoLuiz } alt="Foto de Luiz"></img>
             </figure>
             <div className="text-section-about">
               <h3>Sobre</h3>
@@ -93,15 +93,15 @@ export default function HomePage() {
                 <h4>Tecnologias que domino:</h4>
                 <div className="technologies-box">
                   <figure>
-                    <img src="assets/icon/HTML.png" alt="HTML Icon"></img>
+                    <img src={ htmlIcon } alt="HTML Icon"></img>
                       <figcaption>HTML</figcaption>
                   </figure>
                   <figure>
-                    <img src="assets/icon/CSS.png" alt="CSS Icon"></img>
+                    <img src={ cssIcon } alt="CSS Icon"></img>
                       <figcaption>CSS</figcaption>
                   </figure>
                   <figure>
-                    <img src="assets/icon/JS.png" alt="JavaScripty Icon"></img>
+                    <img src={ javascriptIcon } alt="JavaScript Icon"></img>
                       <figcaption>JavaScript</figcaption>
                   </figure>
                 </div>
@@ -110,16 +110,8 @@ export default function HomePage() {
                 <h4>Tecnologias que irei aprender:</h4>
                 <div className="technologies-box">
                   <figure>
-                    <img src="assets/icon/REACT.png" alt="React Icon"></img>
+                    <img src={ reactIcon } alt="React Icon"></img>
                       <figcaption>React</figcaption>
-                  </figure>
-                  <figure>
-                    <img src="assets/icon/ANGULAR.png" alt="Angular Icon"></img>
-                      <figcaption>Angular</figcaption>
-                  </figure>
-                  <figure>
-                    <img src="assets/icon/VUE.png" alt="Vue.js Icon"></img>
-                      <figcaption>Vue.js</figcaption>
                   </figure>
                 </div>
               </div>
@@ -132,23 +124,23 @@ export default function HomePage() {
             <div className="container-contact">
               <div className="box-contacts">
                 <figure>
-                  <img src="assets/icon/email.png" alt="Email Icon"></img>
+                  <img src={ emailIcon } alt="Email Icon"></img>
                     <figcaption><a href="mailto:luizollvrsantos@gmail.com">E-mail</a></figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/icon/whatsapp.png" alt="Whatsapp Icon"></img>
+                  <img src={ whatsappIcon } alt="Whatsapp Icon"></img>
                     <figcaption><a href="https://api.whatsapp.com/send?phone=5571996036876&text=Ol%C3%A1!%20Tudo%20bem%20com%20voc%C3%AA%3F%20Siga%20o%20link%20abaixo%20e%20vamos%20tratar%20do%20assunto%20que%20deseja.">Whatsapp</a></figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/icon/linkedin.png" alt="LinkedIn Icon"></img>
+                  <img src={ linkedinIcon } alt="LinkedIn Icon"></img>
                     <figcaption><a href="https://www.linkedin.com/in/luiz-henrique-a77732240/">LinkedIn</a></figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/icon/github.png" alt="GitHub Icon"></img>
+                  <img src={ githubIcon } alt="GitHub Icon"></img>
                     <figcaption><a href="https://github.com/LuizMeraki">GitHub</a></figcaption>
                 </figure>
                 <figure>
-                  <img src="assets/icon/instagram.png" alt="Instagram Icon"></img>
+                  <img src={ instagramIcon } alt="Instagram Icon"></img>
                     <figcaption><a href="https://www.instagram.com/luizmeraki/">Instagram</a></figcaption>
                 </figure>
               </div>
@@ -156,6 +148,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+
       <Footer />
     </>
   );
