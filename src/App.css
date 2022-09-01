@@ -42,7 +42,7 @@ section:nth-of-type(odd) {
 
 /* MEDIA QUERY */
 
-@media only screen and (max-width: 850px) {
+@media (max-width: 850px) {
      .menu {
           flex-direction: column;
      }
@@ -61,7 +61,7 @@ section:nth-of-type(odd) {
      }
 }
 
-@media only screen and (max-width: 550px) {
+@media (max-width: 550px) {
      .max-width {
           width: 85%;
      }
@@ -88,7 +88,7 @@ section:nth-of-type(odd) {
      }
 }
 
-@media only screen and (max-width: 430px) {
+@media (max-width: 430px) {
      .banner {
           height: 320px;
      }

@@ -90,8 +90,7 @@ h2::after {
 .about {
   padding: 50px 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 40px;
 }
@@ -106,16 +105,84 @@ h3 {
   margin-bottom: 8px;
 }
 
-.text-section-about p:first-of-type {
+.container-about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  transition: .3s;
+}
+
+.container-about p:first-of-type {
   margin-top: 12px;
   font-size: 1.5rem;
 }
 
-.text-section-about p {
+.container-about p {
   width: 100%;
   max-width: 700px;
   line-height: 25px;
   margin-top: 20px;
+}
+
+.btn-box-see-more {
+  margin-top: 1.6em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.btn-box-see-more button {
+  font-size: 1em;
+  background-color: #288d34;
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn-box-see-more button:hover {
+  background-color: #3fb64b;
+  box-shadow: 0 0 15px 5px #00e10f1d;
+}
+
+.arrow-down-img,
+.arrow-up-img {
+  width: 2.5em;
+  position: absolute;
+  animation: arrow-down infinite 1.2s alternate;
+}
+
+.arrow-up-img {
+  transform: rotate(180deg);
+  animation: arrow-up infinite 1.2s alternate;
+}
+
+@keyframes arrow-down {
+  0% {
+    top: 110%;
+  }
+  50% {
+    top: 132%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+@keyframes arrow-up {
+  0% {
+    top: -65%;
+  }
+  50% {
+    top: -95%;
+  }
+  100% {
+    top: -65%;
+  }
 }
 
 /* TECHNOLOGIES */
