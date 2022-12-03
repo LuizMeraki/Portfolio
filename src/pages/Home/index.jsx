@@ -1,40 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './style.css';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-// Components
-import Header from '../../components/Header/';
-import Footer from '../../components/Footer/';
-import ProjectCard from '../../components/ProjectCard/';
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { ProjectCard } from "../../components/ProjectCard";
 
-// Images
-import fotoPerfil from '../../assets/foto-perfil.png';
-import capaNetflix from '../../assets/capa-netflix.png';
-import capaAlucar from '../../assets/capa-alucar.png';
-import capaAgenciaDeViagens from '../../assets/capa-agencia-de-viagens.png';
-import fotoLuiz from '../../assets/foto-luiz.jpg';
-import htmlIcon from '../../assets/icons/html.png';
-import cssIcon from '../../assets/icons/css.png';
-import javascriptIcon from '../../assets/icons/js.png';
-import reactIcon from '../../assets/icons/react.png';
-import emailIcon from '../../assets/icons/email.png';
-import whatsappIcon from '../../assets/icons/whatsapp.png';
-import linkedinIcon from '../../assets/icons/linkedin.png';
-import githubIcon from '../../assets/icons/github.png';
-import instagramIcon from '../../assets/icons/instagram.png';
-import btnArrow from '../../assets/icons/arrow.png';
+import fotoPerfil from "../../assets/foto-perfil.png";
+import capaNetflix from "../../assets/capa-netflix.png";
+import capaAlucar from "../../assets/capa-alucar.png";
+import capaAgenciaDeViagens from "../../assets/capa-agencia-de-viagens.png";
+import fotoLuiz from "../../assets/foto-luiz.jpg";
+import htmlIcon from "../../assets/icons/html.png";
+import cssIcon from "../../assets/icons/css.png";
+import javascriptIcon from "../../assets/icons/js.png";
+import reactIcon from "../../assets/icons/react.png";
+import emailIcon from "../../assets/icons/email.png";
+import whatsappIcon from "../../assets/icons/whatsapp.png";
+import linkedinIcon from "../../assets/icons/linkedin.png";
+import githubIcon from "../../assets/icons/github.png";
+import instagramIcon from "../../assets/icons/instagram.png";
+import btnArrow from "../../assets/icons/arrow.png";
+import styles from "./style.module.css";
+import { SectionTitle } from "../../components/SectionTitle";
 
 
-export default function HomePage() {
+export const Home = () => {
 
-  // contexto: botão "ver mais"
   const [seeMore, setSeeMore] = useState(false);
   const seeMoreBtn = "Ver mais"
   const seeLessBtn = "Ver menos"
   const arrowDownIcon = "arrow-down-img"
   const arrowUpIcon = "arrow-up-img"
 
-  const handleSwitchSeeMoreLogic = () => {
+  const handleSeeMore = () => {
     setSeeMore(!seeMore);
   }
 
@@ -42,51 +40,49 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <section className="banner">
-          <div className="img-banner"></div>
-          <div className="max-width">
-            <div className="menu-content">
+        <section className={styles.banner}>
+          <div className={`${styles.bannerContent} container-padding`}>
+            <div className={`${styles.flexContent} max-width`}>
               <figure>
                 <img src={fotoPerfil} alt="Perfil Luiz"></img>
               </figure>
-              <div className="phrase">
+              <div className={styles.phraseContainer}>
                 <p>"Hoje <span className="green-text">melhor</span> do que ontem, amanhã melhor do que hoje."</p>
               </div>
             </div>
           </div>
         </section>
         <section id="projects">
-          <div className="projects max-width">
-            <h2>Projetos</h2>
-            <div className="card-container">
+          <div className="max-width">
+            <SectionTitle title="Projetos" />
+            <div className={styles.cardContainer}>
               <ProjectCard
-                card_title={"Netflix"}
-                card_image={capaNetflix}
-                card_description={"Projeto inspirado na netflix que entrega um layout bem próximo ao site original. Este projeto não possui funcionalidades de back-end e nem a links, este projeto foi desenvolvido com o intuito de pôr em prática os conhecimentos em HTML e CSS. Com exceção da seção FAQ, este site está semelhante ao oficial."}
-                card_website={"https://luizmeraki.github.io/Netflix/netflix/"}
-                card_github={"https://github.com/LuizMeraki/Netflix"} />
-
+                cardTitle="Netflix"
+                cardImage={capaNetflix}
+                cardDescription="Projeto inspirado na netflix que entrega um layout bem próximo ao site original. Este projeto não possui funcionalidades de back-end e nem a links, este projeto foi desenvolvido com o intuito de pôr em prática os conhecimentos em HTML e CSS. Com exceção da seção FAQ, este site está semelhante ao oficial."
+                cardWebsite="https://luizmeraki.github.io/Netflix/netflix/"
+                cardGithub="https://github.com/LuizMeraki/Netflix"
+              />
               <ProjectCard
-                card_title={"Agência de Viagens"}
-                card_image={capaAgenciaDeViagens}
-                card_description={"Este bonito e intuitivo site de uma agência de viagens, traz o que você precisa para você se preparar para sua viagem. Aqui você informa seus dados, data de partida, de volta e ainda descobre mais sobre outros lugares que você pode conhecer na seção de ofertas e anúncios."}
-                card_website={"https://luizmeraki.github.io/agencia-de-viagens/agencia-de-viagens/"}
-                card_github={"https://github.com/LuizMeraki/agencia-de-viagens"} />
-
+                cardTitle="Agência de Viagens"
+                cardImage={capaAgenciaDeViagens}
+                cardDescription="Este bonito e intuitivo site de uma agência de viagens, traz o que você precisa para você se preparar para sua viagem. Aqui você informa seus dados, data de partida, de volta e ainda descobre mais sobre outros lugares que você pode conhecer na seção de ofertas e anúncios."
+                cardWebsite="https://luizmeraki.github.io/agencia-de-viagens/agencia-de-viagens/"
+                cardGithub="https://github.com/LuizMeraki/agencia-de-viagens"
+              />
               <ProjectCard
-                card_title={"Aluguel de carros"}
-                card_image={capaAlucar}
-                card_description={'Este é um site de aluguel de carros, aqui você poderá escolher e alugar o carro que estiver disponível, basta preencher o formulário com suas informações, escolher o modelo na lista de modelos e ainda irá descobrir mais sobre a "empresa" AluCar.'}
-                card_website={"https://luizmeraki.github.io/alucar-aluguel-de-carros/aluguel-de-carros/"}
-                card_github={"https://github.com/LuizMeraki/alucar-aluguel-de-carros"} />
-            </div>
-            <div className="projects-link">
-              <Link className="component-link" to='/projects'>Ver mais projetos</Link>
+                cardTitle="Aluguel de carros"
+                cardImage={capaAlucar}
+                cardDescription="Este é um site de aluguel de carros, aqui você poderá escolher e alugar o carro que estiver disponível, basta preencher o formulário com suas informações, escolher o modelo na lista de modelos e ainda irá descobrir mais sobre a empresa AluCar."
+                cardWebsite="https://luizmeraki.github.io/alucar-aluguel-de-carros/aluguel-de-carros/"
+                cardGithub="https://github.com/LuizMeraki/alucar-aluguel-de-carros"
+              />
             </div>
           </div>
         </section>
         <section id="about">
           <div className="about max-width">
+            <SectionTitle title="Sobre mim" />
             <div className="container-about">
               <figure>
                 <img src={fotoLuiz} alt="Foto de Luiz"></img>
@@ -112,14 +108,14 @@ export default function HomePage() {
               </>
             }
             <div className="btn-box-see-more">
-              <button onClick={ handleSwitchSeeMoreLogic }>{seeMore ? seeLessBtn : seeMoreBtn}</button>
-              <img className={ seeMore ? arrowUpIcon : arrowDownIcon } src={ btnArrow } alt="Seta" />
+              <button onClick={handleSeeMore}>{seeMore ? seeLessBtn : seeMoreBtn}</button>
+              <img className={seeMore ? arrowUpIcon : arrowDownIcon} src={btnArrow} alt="Seta" />
             </div>
           </div>
         </section>
         <section id="technologies">
           <div className="max-width">
-            <h2>Tecnologias</h2>
+            <SectionTitle title="Tecnologias" />
             <div className="container-technologies">
               <div className="technologies-card">
                 <h4>Tecnologias que domino:</h4>
@@ -152,7 +148,7 @@ export default function HomePage() {
         </section>
         <section id="contact">
           <div className="max-width">
-            <h2>Contato</h2>
+            <SectionTitle title="Contato" />
             <div className="container-contact">
               <div className="box-contacts">
                 <figure>

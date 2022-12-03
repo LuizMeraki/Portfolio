@@ -1,11 +1,10 @@
-import React from 'react';
-import './style.css';
+import styles from "./style.module.css";
 
 
-export default function Header() {
+export const Header = () => {
   return (
-    <header>
-      <div className="menu max-width-menu">
+    <header className={styles.header}>
+      <div className={`${styles.menu} max-width container-padding`}>
         <a href="#"><span className="green-text">Luiz</span> Henrique</a>
         <nav>
           <a href="#projects"><span className="green-text">Projetos</span></a>

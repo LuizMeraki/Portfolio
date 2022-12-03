@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
 
-export default function ProjectsPage (){
+export const MyProjects = () => {
   return (
     <div className='projects-page-content'>
       <h1>Em breve :&#8334;</h1>

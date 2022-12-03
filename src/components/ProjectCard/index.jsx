@@ -1,20 +1,19 @@
-import React from 'react';
 import './style.css';
 
 
-export default function ProjectCard(props) {
+export const ProjectCard = ({ cardTitle, cardImage, cardDescription, cardWebsite, cardGithub }) => {
   return (
     <div className="card">
-      <h4>{ props.card_title }</h4>
+      <h4>{cardTitle}</h4>
       <div className="card-content">
         <figure>
-          <img src={ props.card_image } alt="Capa Netflix"></img>
+          <img src={cardImage} alt="Capa Netflix"></img>
         </figure>
-        <p>{ props.card_description }</p>
+        <p>{cardDescription}</p>
       </div>
       <div className="card-links">
-        <a href={ props.card_website } target="_blank">Site do projeto</a>
-        <a href={ props.card_github } target="_blank">Github</a>
+        <a href={cardWebsite} target="_blank">Site do projeto</a>
+        <a href={cardGithub} target="_blank">Github</a>
       </div>
     </div>
   );

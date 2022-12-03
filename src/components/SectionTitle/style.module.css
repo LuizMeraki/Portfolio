@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 35px;
+}
+
+.container h2::before {
+  color: #319E3D;
+  content: '< ';
+}
+
+.container h2::after {
+  color: #319E3D;
+  content: ' />';
+}

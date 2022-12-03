@@ -1,10 +1,12 @@
-import React from 'react';
-import AppRoutes from './routes/';
-import './App.css';
+import { AppRoutes } from "./routes";
+import "./index.css";
 
 
-export default function App (){
+const App = () => {
   return (
     <AppRoutes />
   );
 }
+
+
+export default App;

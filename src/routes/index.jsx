@@ -1,17 +1,15 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Components
-import HomePage from '../pages/HomePage/';
-import ProjectsPage from '../pages/ProjectsPage/';
+import { Home } from "../pages/Home/";
+import { MyProjects } from "../pages/MyProjects/";
 
 
-export default function AppRoutes (){
+export const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={ <HomePage /> } />
-        <Route path='/projects' element={ <ProjectsPage /> } />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/projects" element={<MyProjects />} />
       </Routes>
     </BrowserRouter>
   );
