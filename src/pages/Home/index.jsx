@@ -72,10 +72,10 @@ export const Home = () => {
           </div>
         </section>
         <section id="skills" className="container-padding">
-          <div className="max-width" data-aos="flip-right">
+          <div className="max-width">
             <SectionTitle title="Habilidades" />
             <div className={styles.skillsContainer}>
-              <div className={styles.skillsCard}>
+              <div className={styles.skillsCard} data-aos="flip-right">
                 <h4>Minhas habilidades e tecnologias que atuo</h4>
                 <ul>
                   {skillsList.map((item, index) => (
