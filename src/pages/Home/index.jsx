@@ -33,7 +33,7 @@ export const Home = () => {
       <main>
         <section className={styles.banner}>
           <div className={`${styles.bannerContent} container-padding`}>
-            <div className={`${styles.flexContent} max-width`}>
+            <div className={`${styles.flexContent} max-width`} data-aos="zoom-out">
               <figure>
                 <img src={fotoPerfil} alt="Perfil Luiz"></img>
               </figure>
@@ -46,7 +46,7 @@ export const Home = () => {
         <section id="projects" className="container-padding">
           <div className="max-width">
             <SectionTitle title="Projetos" />
-            <div className={styles.cardContainer} data-aos="fade-right">
+            <div className={styles.cardContainer} data-aos="fade-left">
               <ProjectCard
                 cardTitle="Netflix"
                 cardImage={capaNetflix}
@@ -72,7 +72,7 @@ export const Home = () => {
           </div>
         </section>
         <section id="skills" className="container-padding">
-          <div className="max-width" data-aos="fade-left">
+          <div className="max-width" data-aos="flip-right">
             <SectionTitle title="Habilidades" />
             <div className={styles.skillsContainer}>
               <div className={styles.skillsCard}>
