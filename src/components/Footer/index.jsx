@@ -1,11 +1,11 @@
-import './style.css';
+import styles from "./style.module.css";
 
 
 export const Footer = () => {
   return (
-    <footer>
-      <div className="footer max-width">
-        <p>&#169; 2022 Todos os direitos reservados - Desenvolvido por Luiz Henrique</p>
+    <footer className={styles.footer}>
+      <div className={`${styles.footerArea} max-width`}>
+        <p>&#169; 2022 Portfólio - Luiz Henrique</p>
       </div>
     </footer>
   );

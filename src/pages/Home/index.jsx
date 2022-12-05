@@ -1,40 +1,31 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { ProjectCard } from "../../components/ProjectCard";
+import { SectionTitle } from "../../components/SectionTitle";
+import { skillsList } from "../../constants/skillsList";
 
 import fotoPerfil from "../../assets/foto-perfil.png";
 import capaNetflix from "../../assets/capa-netflix.png";
 import capaAlucar from "../../assets/capa-alucar.png";
 import capaAgenciaDeViagens from "../../assets/capa-agencia-de-viagens.png";
-import fotoLuiz from "../../assets/foto-luiz.jpg";
-import htmlIcon from "../../assets/icons/html.png";
-import cssIcon from "../../assets/icons/css.png";
-import javascriptIcon from "../../assets/icons/js.png";
-import reactIcon from "../../assets/icons/react.png";
 import emailIcon from "../../assets/icons/email.png";
 import whatsappIcon from "../../assets/icons/whatsapp.png";
 import linkedinIcon from "../../assets/icons/linkedin.png";
 import githubIcon from "../../assets/icons/github.png";
 import instagramIcon from "../../assets/icons/instagram.png";
-import btnArrow from "../../assets/icons/arrow.png";
 import styles from "./style.module.css";
-import { SectionTitle } from "../../components/SectionTitle";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 export const Home = () => {
 
-  const [seeMore, setSeeMore] = useState(false);
-  const seeMoreBtn = "Ver mais"
-  const seeLessBtn = "Ver menos"
-  const arrowDownIcon = "arrow-down-img"
-  const arrowUpIcon = "arrow-up-img"
+  Aos.init({
+    delay: 400,
+    once: true,
+  });
 
-  const handleSeeMore = () => {
-    setSeeMore(!seeMore);
-  }
 
   return (
     <>
@@ -52,10 +43,10 @@ export const Home = () => {
             </div>
           </div>
         </section>
-        <section id="projects">
+        <section id="projects" className="container-padding">
           <div className="max-width">
             <SectionTitle title="Projetos" />
-            <div className={styles.cardContainer}>
+            <div className={styles.cardContainer} data-aos="fade-right">
               <ProjectCard
                 cardTitle="Netflix"
                 cardImage={capaNetflix}
@@ -80,77 +71,34 @@ export const Home = () => {
             </div>
           </div>
         </section>
-        <section id="about">
-          <div className="about max-width">
-            <SectionTitle title="Sobre mim" />
-            <div className="container-about">
-              <figure>
-                <img src={fotoLuiz} alt="Foto de Luiz"></img>
-              </figure>
-              <div className="box-about-description">
-                <h3>Sobre</h3>
-                <p><span className="green-text">Luiz</span> Henrique</p>
-                <p>Olá! Eu sou Luiz,  um profissional de desenvolvimento Front-end. Quando criança, eu consertava rádios celulares e só largava quando resolvia o problema. Eu cresci encantado com a tecnologia, e aos meus 16 anos eu estava a procura de um rumo para seguir, logo descobri a programação e fiquei fascinado, já que eu amo tecnologia e resolver problemas. Eu vivo sempre buscando mais e indo além do que é proposto à mim,  busco pessoas que gostam de crescer juntas, e assim, estou em minha caminhada para encontrar uma empresa que tenha princípios de ajudar o próximo e entregar sempre o melhor. Permaneço seguindo a filosofia Japonesa Kaizen:  “ <span className="green-text">Hoje melhor do que ontem, amanhã melhor do que hoje</span> ”, aplico isto em qualquer coisa da minha vida; desta forma sigo buscando a melhoria constante em prol de ser cada dia melhor no que faço, e assim está sendo com a programação.</p>
+        <section id="skills" className="container-padding">
+          <div className="max-width" data-aos="fade-left">
+            <SectionTitle title="Habilidades" />
+            <div className={styles.skillsContainer}>
+              <div className={styles.skillsCard}>
+                <h4>Minhas habilidades e tecnologias que atuo</h4>
+                <ul>
+                  {skillsList.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
               </div>
-            </div>
-            {seeMore &&
-              <>
-                <div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint error adipisci facilis eaque quo assumenda exercitationem nesciunt excepturi aliquid corrupti! Omnis provident aliquid eum doloribus doloremque, exercitationem minus facilis error!</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, corporis? Debitis, quaerat illum. Laborum id doloribus eligendi minima doloremque eveniet ex vel quaerat, earum harum temporibus nobis repellendus aliquid excepturi!</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo nam quo repellendus quas aperiam dolorem voluptates placeat nihil. Eligendi repellendus dolore molestiae quo quibusdam facilis dolores iste vitae laborum?</p>
-                </div>
-                <div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint error adipisci facilis eaque quo assumenda exercitationem nesciunt excepturi aliquid corrupti! Omnis provident aliquid eum doloribus doloremque, exercitationem minus facilis error!</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, corporis? Debitis, quaerat illum. Laborum id doloribus eligendi minima doloremque eveniet ex vel quaerat, earum harum temporibus nobis repellendus aliquid excepturi!</p>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo nam quo repellendus quas aperiam dolorem voluptates placeat nihil. Eligendi repellendus dolore molestiae quo quibusdam facilis dolores iste vitae laborum?</p>
-                </div>
-              </>
-            }
-            <div className="btn-box-see-more">
-              <button onClick={handleSeeMore}>{seeMore ? seeLessBtn : seeMoreBtn}</button>
-              <img className={seeMore ? arrowUpIcon : arrowDownIcon} src={btnArrow} alt="Seta" />
             </div>
           </div>
         </section>
-        <section id="technologies">
+        <section id="about" className="container-padding">
           <div className="max-width">
-            <SectionTitle title="Tecnologias" />
-            <div className="container-technologies">
-              <div className="technologies-card">
-                <h4>Tecnologias que domino:</h4>
-                <div className="technologies-box">
-                  <figure>
-                    <img src={htmlIcon} alt="HTML Icon"></img>
-                    <figcaption>HTML</figcaption>
-                  </figure>
-                  <figure>
-                    <img src={cssIcon} alt="CSS Icon"></img>
-                    <figcaption>CSS</figcaption>
-                  </figure>
-                  <figure>
-                    <img src={javascriptIcon} alt="JavaScript Icon"></img>
-                    <figcaption>JavaScript</figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div className="technologies-card">
-                <h4>Tecnologias que irei aprender:</h4>
-                <div className="technologies-box">
-                  <figure>
-                    <img src={reactIcon} alt="React Icon"></img>
-                    <figcaption>React</figcaption>
-                  </figure>
-                </div>
-              </div>
+            <SectionTitle title="Sobre mim" />
+            <div className={styles.aboutMeContainer} data-aos="fade-right">
+              <p>Olá! Eu sou Luiz,  um profissional de desenvolvimento Front-end. Quando criança, eu consertava rádios celulares e só largava quando resolvia o problema. Eu cresci encantado com a tecnologia, e aos meus 16 anos eu estava a procura de um rumo para seguir, logo descobri a programação e fiquei fascinado, já que eu amo tecnologia e resolver problemas. Eu vivo sempre buscando mais e indo além do que é proposto à mim,  busco pessoas que gostam de crescer juntas, e assim, estou em minha caminhada para encontrar uma empresa que tenha princípios de ajudar o próximo e entregar sempre o melhor. Permaneço seguindo a filosofia Japonesa Kaizen:  “ <span className="green-text">Hoje melhor do que ontem, amanhã melhor do que hoje</span> ”, aplico isto em qualquer coisa da minha vida; desta forma sigo buscando a melhoria constante em prol de ser cada dia melhor no que faço, e assim está sendo com a programação.</p>
             </div>
           </div>
         </section>
-        <section id="contact">
+        <section id="contact" className="container-padding">
           <div className="max-width">
             <SectionTitle title="Contato" />
-            <div className="container-contact">
-              <div className="box-contacts">
+            <div className={styles.contactContainer}>
+              <div data-aos="fade-left">
                 <figure>
                   <img src={emailIcon} alt="Email Icon"></img>
                   <figcaption><a href="mailto:luizollvrsantos@gmail.com" target="_blank">E-mail</a></figcaption>

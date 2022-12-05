@@ -1,10 +1,9 @@
 .card {
   min-width: 310px;
-  display: flex;
   margin: 20px;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 15px;
   background: linear-gradient(151.28deg, #232253, #01001cde, #23225365);
   border: 1.5px solid #cc91ff21;
   transition: .4s;
@@ -12,39 +11,37 @@
 
 .card:hover {
   box-shadow: 0 0 15px 0.5px #906cdf54;
-  border: none;
-  transform: scale(1.04);
 }
 
-.card:last-of-type {
-  margin-right: 0;
+.cardPadding {
+  padding: 12px;
 }
 
-.card h4 {
+.projectName h4 {
   font-weight: 500;
   border-left: 3px solid #319E3D;
   padding-left: 10px;
-  margin: 0 0 10px 10px;
 }
 
-.card figure, .card figure img {
+.projectImage,
+.projectImage img {
   width: 100%;
 }
 
-.card p {
+.projectDescription p {
   font-size: 0.9rem;
-  padding: 10px;
   margin-bottom: 12px;
+  padding-top: 10px;
 }
 
-.card-links {
+.cardLinks {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.card a {
+.cardLinks a {
   text-align: center;
   width: 100%;
   margin-top: 2px;
@@ -54,6 +51,6 @@
   transition: .4s;
 }
 
-.card a:hover {
+.cardLinks a:hover {
   background-color: #ffffff00;
 }

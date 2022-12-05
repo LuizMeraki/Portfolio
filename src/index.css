@@ -11,8 +11,9 @@
   scroll-behavior: smooth;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -22,10 +23,18 @@
 ::-webkit-scrollbar-thumb {
   background-color: #319E3D;
   border-radius: 15px;
-} */
+}
 
 body {
   background-color: #080717;
+}
+
+section {
+  padding-bottom: 2.5em;
+}
+
+section:first-of-type {
+  padding-bottom: 0;
 }
 
 section:nth-of-type(odd) {
