@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  display: flex;
+  margin: 15px;
+}
+
+.container svg {
+  font-size: 20px;
+  margin-right: 13px;
+}
+
+.container a {
+  transition: .2s;
+}
+
+.container a:hover {
+  color: #319E3D;
+}

@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 32px;
+  right: 15px;
+  z-index: 100;
+}
+
+.container label {
+  font-size: .7em;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.container a {
+  width: fit-content;
+  background-color: #319E3D;
+  padding: 17px 19px;
+  border-radius: 50%;
+  transition: .1s;
+  animation: link-shadow 3s infinite;
+}
+
+@keyframes link-shadow {
+  0% {
+    box-shadow: 0 0 10px 1px #1f5f26;
+  }
+
+  50% {
+    box-shadow: 0 0 10px 1px #519c5a;
+  }
+
+  100% {
+    box-shadow: 0 0 10px 1px #1f5f26;
+  }
+}
+
+.container a svg {
+  font-size: 1.5em;
+}
